@@ -10,12 +10,12 @@ import { Montserrat } from 'next/font/google';
 
 // Create a Montserrat font instance with specified weights
 const montserrat = Montserrat({
-  weights: [400, 500, 700, 900],
+  weight: ['400', '500', '700', '900'], // Corrected property name
   subsets: ['latin'],
 });
 
 export default function Home() {
-  const taglines = ["Effortless Learning", "AI-Powered Flashcards" , "Ace Your Next Exam"];
+  const taglines = ["Effortless Learning", "AI-Powered Flashcards", "Ace Your Next Exam"];
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Home() {
       <p className="text-xl text-gray-700 mb-8 mt-4 font-light">
         Revolutionize your study routine with AI-generated flashcards.
       </p>
-      <Button className="mb-12 font-medium" size="large" variant="outlined" sx={ { color: "black" } }>
+      <Button className="mb-12 font-medium" size="large" variant="outlined" sx={{ color: "black" }}>
         Create Your Flashcards Now
       </Button>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

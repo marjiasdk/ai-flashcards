@@ -105,9 +105,9 @@ const Login = () => {
         </form>
         <Grid container justifyContent="flex-end">
           <Grid item>
-            <Button href="/signup" variant="text" sx={{ color: "black" }}>
-              Don't have an account? Sign up
-            </Button>
+          <Button href="/signup" variant="text" sx={{ color: "black" }}>
+            Don&apos;t have an account? Sign up
+          </Button>
           </Grid>
         </Grid>
       </Box>
