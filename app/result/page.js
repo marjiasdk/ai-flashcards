@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { CircularProgress, Container, Typography, Box, Button } from '@mui/material';
@@ -8,7 +8,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import ReplayIcon from '@mui/icons-material/Replay';
 import HomeIcon from '@mui/icons-material/Home';
 
-const ResultPage = () => {
+const ResultContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const session_id = searchParams.get('session_id');
@@ -117,6 +117,14 @@ const ResultPage = () => {
         </>
       )}
     </Container>
+  );
+};
+
+const ResultPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResultContent />
+    </Suspense>
   );
 };
 
